@@ -1,0 +1,130 @@
+<html>
+<head>
+    <style>
+        body {
+            background-image: url(https://i.pinimg.com/736x/90/16/b0/9016b0d8fedfdf16bb33b588ca9dceb2.jpg);
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 10px;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            border: 5px solid brown;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: brown;
+            padding: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .image-container {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+            margin: 100px 200px;
+            position: left top;
+        }
+
+        .login-container {
+            flex: 1;
+            padding: 10px;
+            border: 5px solid brown;
+            text-align: center;
+            margin: 140px 100px 100px 75px;
+            position: absolute;
+            top: 100;
+            right: 150;
+            width: 300px;
+            box-shadow: 0 0 10px black;
+        }
+        #login-form input {
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        marquee {
+            color: black;
+        }
+        a:hover{
+      color: orangered;
+      text-decoration: none;
+    }
+    </style>
+</head>
+
+<body>
+    <h1><i>EXPENSE TRACKER WEBSITE</i></h1>
+    <nav>
+        <ul>
+            <center>
+                <li><a href="home.html" target=_blank>Home</a></li>
+                <li><a href="expensetype.html" target=_blank>Expense Type</a></li>
+                <li><a href="app.html" target=_blank>App</a></li>
+                <li><a href="AboutUs.html" target=_blank>About Us</a></li>
+                <li><a href="feedback.html" target=_blank>Feedback</a></li>
+                <li><a href="calculator.html" target=_blank>Calculator</a></li>
+            </center>
+        </ul>
+    </nav>
+
+    <div class="image-container">
+        <img src=https://png.pngtree.com/background/20231031/original/pngtree-money-and-coins-calculator-a-visual-representation-of-tracking-income-expenses-picture-image_5813901.jpg
+            height="300" width="400">
+    </div>
+    <div class="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="login()">Login</button>
+    </form>
+</div>
+<script>
+    function login() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    
+    if (username !== '' && password !== '') {
+        alert('Login successful!');
+        
+        
+        window.open('Home.html', '_blank');
+    } else {
+        alert('Please enter a valid username and password.');
+    }
+}
+</script>
+
+</body>
+</html>
+    <center><i>&copy; Copyright All Rights Reserved 2023</i></center>
+    <i>
+        <marquee>Made by HIMANSHI, ARCHITA and ARADHYA</marquee>
+    </i>
+</body>
+
+</html>

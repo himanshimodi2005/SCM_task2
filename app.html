@@ -1,0 +1,47 @@
+<html>	
+<head>
+    <title>apps.html</title>
+    <STYLE>
+	body{
+	   background-image: url(https://st.depositphotos.com/1074550/2952/i/450/depositphotos_29522159-stock-photo-abstract-pastel-pink-and-white.jpg);
+	   background-repeat: no-repeat;
+	   background-position: center;
+	   background-size: cover;
+	}
+        H1{
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+        H3{
+            font-style: italic;
+            color: blue;
+        }
+    </STYLE>
+</head>
+<body>
+    <H1>EXPENSE TRACKER APPS</H1>
+    <H3>IMPORTANCE OF EXPENSE TRACKER APPS</H3>
+    <P>An expense tracker app allows you to monitor and categorize your expenses across different bank and investment accounts and credit cards. Some of these apps also offer budgeting tools, credit monitoring, mileage tracking, receipt keeping, and advice to grow your net worth.</P>
+    <P>tracking expenses helps us identify areas where we tend to overspend. By keeping a record of our daily or monthly expenses, we can analyze where our money goes and devise strategies to cut down unnecessary costs. Secondly, it enables us to stay within budget limits.</P>
+    <H5>DIFFERENT APPS ARE LISTED BELOW</H5>
+    <img src="https://cdn-blog.seedly.sg/wp-content/uploads/2022/01/20174008/Best-expense-tracking-apps.png" height="250" width="500">
+    <br>
+    <br>
+<select id="appDropdown" onchange="redirectToApp()">
+        <option value="selected disabled">Select an App</option>
+        <option value="https://www.expensify.com/">EXPENSIFY</option>
+        <option value="https://www.nerdwallet.com/">NERDWALLET</option>
+        <option value="https://www.empower.com/">EMPOWER</option>
+        <option value="https://www.everlance.com/">EVERLANCE</option>
+    </select>
+    
+    <script>
+        function redirectToApp() {
+            var selectedApp = document.getElementById("appDropdown").value;
+            if (selectedApp !== "selected disabled") {
+                window.open(selectedApp, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>

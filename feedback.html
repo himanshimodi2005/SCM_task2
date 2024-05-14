@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <style>
+        body {
+            background-image: url(https://i0.wp.com/backgroundabstract.com/wp-content/uploads/edd/2022/02/123.jpg?fit=739%2C379&ssl=1);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-shadow: 0 0 10px green;
+
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            cursor: pointer;
+            font-size: 30px;
+            margin: 0 5px;
+            opacity: 0.5;
+        }
+
+        label:hover,
+        input[type="radio"]:checked+label {
+            opacity: 1;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 20px;
+            background-color: green;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: darkgreen;
+        }
+
+        footer {
+      text-align: justify;
+      padding: 0px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin: 10px;
+      color: blue;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback Form</h1>
+        <form id="feedbackForm" >
+            First Name: <input type="text" name="firstname" placeholder="First Name" required><br>
+            Second Name: <input type="text" name="secondname" placeholder="Last Name" required><br>
+            Enter amount saved: <input type="number" name="amount" placeholder="Enter amount" required><br>
+            GENDER:
+            <input type="radio" name="gender" value="male" id="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="female" id="female">
+            <label for="female">Female</label><br><br>
+            Email ID:
+            <input type="email" name="mail" placeholder="Enter your email-id" required><br><br>
+            Comment:<br>
+            <textarea name="commentfield" rows="6" cols="50" placeholder="Your Comment" required></textarea><br><br>
+            <input type="submit" value="Send Feedback">
+            <input type="reset" value="Reset"><br><br>
+            Rate your experience:<br>
+            <input type="radio" name="rating" value="😊" id="happy">
+            <label for="happy">😊</label>
+            <input type="radio" name="rating" value="😐" id="neutral">
+            <label for="neutral">😐</label>
+            <input type="radio" name="rating" value="😞" id="sad">
+            <label for="sad">😞</label>
+        </form>
+    </div>
+<script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+
+            const formData = {
+                firstName: form.firstname.value,
+                secondName: form.secondname.value,
+                Enteramountsaved: form.amount.value,
+                mail: form.mail.value,
+                commentfield: form.commentfield.value,
+            };
+
+            const dataArray = Object.values(formData);
+
+            const csvString = dataArray.join(',');
+
+            const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", "feedback_data.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            document.getElementById('feedbackForm').dispatchEvent(new Event('submit'));
+        });
+    </script> 
+</body>
+</html>
